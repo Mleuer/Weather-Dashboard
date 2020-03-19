@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+    <div class="header">Weather Dashboard</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <div class="input-group mb-3">
+                    <input id="input-field" type="text" class="form-control" placeholder="City Name" aria-label="City Name"
+                        aria-describedby="searchBtn">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="searchBtn">Search</button>
+                    </div>
+                </div>
+
+                <div class="card" style="width: 18rem;">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Cras justo odio</li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-8">
+                <div id="city-current-weather">
+                    <h1 id="city-label"></h1>
+                    <h3 id="temp-label">Temperature: </h3>
+                    <h3 id="humidity-label">Humidity: </h3>
+                    <h3 id="uv-label">UV Index: </h3>
+                </div>
+
+                <div id="city-five-day">
+                    <div class="col" id="day-one">
+                        <h5>3/19/20</h5>
+                        <p>emoji</p>
+                        <p>humidity</p>
+                        <p>UV Index</p>
+                    </div>
+                    <div class="col" id="day-two">
+                        <h5>3/19/20</h5>
+                        <p>emoji</p>
+                        <p>humidity</p>
+                        <p>UV Index</p>
+                    </div>
+                    <div class="col" id="day-three">
+                        <h5>3/19/20</h5>
+                        <p>emoji</p>
+                        <p>humidity</p>
+                        <p>UV Index</p>
+                    </div>
+                    <div class="col" id="day-four">
+                        <h5>3/19/20</h5>
+                        <p>emoji</p>
+                        <p>humidity</p>
+                        <p>UV Index</p>
+                    </div>
+                    <div class="col" id="day-five">
+                        <h5>3/19/20</h5>
+                        <p>emoji</p>
+                        <p>humidity</p>
+                        <p>UV Index</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

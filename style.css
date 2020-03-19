@@ -1,0 +1,26 @@
+.header {
+    background-color:gray;
+    color:white;
+    text-align: center;
+    height: 100px;
+    font-size: 40px;
+    padding-top: 20px;
+    margin-bottom: 15px;
+}
+
+#city-current-weather {
+    border-style: solid;
+    border-color: lightgray;
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+
+#city-five-day {
+    border-style: solid;
+    border-color: lightgray;
+    padding-left: 10px;
+}
+
+.float-left {
+    float: left;
+}
