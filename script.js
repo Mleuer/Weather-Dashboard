@@ -1,5 +1,13 @@
 var cityMap = new Map();
 
+var weatherSymbols = {
+    "Snow" : "❄️", 
+    "Clear" : "☀️",
+    "Clouds" : "☁️",
+    "Rain" : "🌧️",
+    "Extreme" : "🌪️"
+}
+
 $("#searchBtn").on("click", function () {
     var city = $("#input-field").val();
 
@@ -27,10 +35,8 @@ function renderCityList() {
 
         //Using an iterator twice to get the first city name for the initial load 
         var iterator = map.values();
-        getWeatherByCityName(iterator.next().value);
-        
+        getWeatherByCityName(iterator.next().value);        
         var iterator = map.values();
-
         for (var i = 0; i < map.size; i++) {
             var cityName = iterator.next().value
             var cityListItem = $("<li>").addClass("list-group-item").attr("data-name", cityName).text(cityName);
@@ -58,7 +64,7 @@ function getWeatherByCityName(city) {
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-
+    
         $("#city-label").text(response.name);
         $("#temp-label").text("Temperature: " + response.main.temp + " F");
         $("#humidity-label").text("Humidity: " + response.main.humidity + "%");
@@ -88,6 +94,7 @@ function getWeatherByCityName(city) {
         method: "GET"
     }).then(function (response) {
 
+        console.log(response);
         for (var i = 6; i < response.list.length; i = i + 8) {
             var weatherDiv = $("<div>").addClass("col").addClass("five-day");
 
@@ -97,7 +104,12 @@ function getWeatherByCityName(city) {
             var year = date.getFullYear();
 
             var formattedDate = $("<h5>").text(month+ "/" + day + "/" + year);
-            var symbol = $("<p>").text(response.list[i].weather[0].main);
+
+            var symbolText = response.list[i].weather[0].main;
+            var weatherEmoji = weatherSymbols[symbolText];
+
+            var symbol = $("<p>").addClass("emoji").text(weatherEmoji);
+            
             var temp = $("<p>").text("Temp: " + response.list[i].main.temp);
             var humidity = $("<p>").text("Hum: " + response.list[i].main.humidity + "%");
 
