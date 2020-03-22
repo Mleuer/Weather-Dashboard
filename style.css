@@ -13,14 +13,19 @@
     border-color: lightgray;
     padding-left: 10px;
     margin-bottom: 15px;
+    background-color: lightskyblue;
 }
 
 #city-five-day {
-    border-style: solid;
-    border-color: lightgray;
     padding-left: 10px;
+    display: flex;
 }
 
 .float-left {
     float: left;
+}
+
+.five-day {
+    background-color: lightskyblue;
+    margin-right: 8px;
 }
