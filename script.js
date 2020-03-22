@@ -19,16 +19,29 @@ $(".list-group").on("click", ".list-group-item", function () {
 })
 
 function renderCityList() {
-    var map = new Map(JSON.parse(localStorage.cityMap));
-    console.log(map);
+    
+    var map = new Map(JSON.parse(localStorage.getItem("cityMap")));
 
-    var iterator = map.values();
+    if(map.size > 0) {
+        console.log(map);
 
-    for (var i = 0; i < map.size; i++) {
-        var cityName = iterator.next().value
-        var cityListItem = $("<li>").addClass("list-group-item").attr("data-name", cityName).text(cityName);
-        $(".list-group").prepend(cityListItem);
+        //Using an iterator twice to get the first city name for the initial load 
+        var iterator = map.values();
+        getWeatherByCityName(iterator.next().value);
+        
+        var iterator = map.values();
+
+        for (var i = 0; i < map.size; i++) {
+            var cityName = iterator.next().value
+            var cityListItem = $("<li>").addClass("list-group-item").attr("data-name", cityName).text(cityName);
+            $(".list-group").prepend(cityListItem);
+        }
     }
+    else {
+        return;
+    }
+    
+
 }
 
 function addListItem(cityName) {

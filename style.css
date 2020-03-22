@@ -3,7 +3,7 @@ body {
 }
 
 .header {
-    background-color:gray;
+    background-color:silver;
     color:white;
     text-align: center;
     height: 100px;
@@ -17,7 +17,7 @@ body {
     border-color: lightgray;
     padding-left: 10px;
     margin-bottom: 15px;
-    background-color: gray;
+    background-color: silver;
 }
 
 #city-five-day {
@@ -30,12 +30,14 @@ body {
 }
 
 .five-day {
-    background-color: gray;
+    background-color: silver;
     margin-right: 8px;
 }
 
 .list-group-item {
-    background-color: gray;
+    background-color: silver;
+    border-style: solid;
+    border-color: lightgray;
 }
 
 .btn {
