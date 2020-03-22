@@ -77,12 +77,18 @@ function getWeatherByCityName(city) {
 
         for (var i = 6; i < response.list.length; i = i + 8) {
             var weatherDiv = $("<div>").addClass("col").addClass("five-day");
-            var date = $("<h5>").text(response.list[i].dt_txt);
+
+            var date = new Date(response.list[i].dt_txt);
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            var year = date.getFullYear();
+
+            var formattedDate = $("<h5>").text(month+ "/" + day + "/" + year);
             var symbol = $("<p>").text(response.list[i].weather[0].main);
             var temp = $("<p>").text("Temp: " + response.list[i].main.temp);
             var humidity = $("<p>").text("Hum: " + response.list[i].main.humidity + "%");
 
-            weatherDiv.append(date, symbol, temp, humidity);
+            weatherDiv.append(formattedDate, symbol, temp, humidity);
             $("#city-five-day").append(weatherDiv);
 
         }

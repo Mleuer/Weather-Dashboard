@@ -1,3 +1,7 @@
+body {
+    background-color: lightsteelblue;
+}
+
 .header {
     background-color:gray;
     color:white;
@@ -13,7 +17,7 @@
     border-color: lightgray;
     padding-left: 10px;
     margin-bottom: 15px;
-    background-color: lightskyblue;
+    background-color: gray;
 }
 
 #city-five-day {
@@ -26,6 +30,14 @@
 }
 
 .five-day {
-    background-color: lightskyblue;
+    background-color: gray;
     margin-right: 8px;
+}
+
+.list-group-item {
+    background-color: gray;
+}
+
+.btn {
+    background-color: white;
 }
